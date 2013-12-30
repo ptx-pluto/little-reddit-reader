@@ -74,12 +74,24 @@ require.config({
 
 });
 
-require([
-    'app',
-    'tests/modelTest'
-], function (app, test) {
+// require([
+//     'app',
+//     'tests/modelTest'
+// ], function (app, test) {
   
-    test();
-    app.start();
+//     app.start();
+
+// }); 
+
+require([
+    'tests/modelTest',
+    'tests/subredditTest',
+    'tests/indexTest',
+], function (modelTest, subredditTest, indexTest) {
+
+//    modelTest();
+//    subredditTest();
+    indexTest();
+
 
 }); 
