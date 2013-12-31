@@ -1,13 +1,32 @@
 /*=======================================================================*/
 
+html {
+    height: 100%;
+}
+
 body {
     font-size : 100%;
 
     margin : 0;
     padding : 0;
     border : 0;
-    
+
     background : rgb(228, 228, 228);
+
+    min-height: 100%;
+}
+
+/*=======================================================================
+  Content Page Layout
+=======================================================================*/
+
+#content-page {
+    margin : 0;
+    padding : 0;
+    border : 0;
+
+    min-height: 100%;
+
 }
 
 #sidebar {
@@ -23,73 +42,97 @@ body {
 }
 
 #main {
-    margin-left : 230px;
-    margin-top : 8px;
-    margin-right : 5px;
+    position: absolute;
+
+    margin: 0;
     padding : 0;
     border : 0;
+
+    left: 220px;
+    right: 0;
+    top : 0;
+
+    min-height: 100%;
+
+    -webkit-box-shadow : -4px 0px 3px 0px rgba(68, 68, 68, 0.7);
+    -moz-box-shadow : -4px 0px 3px 0px rgba(68, 68, 68, 0.7);
+    box-shadow : -4px 0px 3px 0px rgba(68, 68, 68, 0.7);
 }
 
-/*=======================================================================*/
+/*=======================================================================
+  Subreddit View
+=======================================================================*/
 
-.stream {
+.subreddit {
     margin : 0;
     padding : 0;
-    padding-bottom : 5px;
     border : 0;
-    height : 100%;
+
+    min-height : 100%;
     width : 100%;
 }
 
-.stream-body {
+.subreddit ul {
+    list-style : none;
+}
+
+.subreddit-header {
+    padding: 20px;
+    margin: 0;
+    height: 60px;
+    background-color: #4d8456;
+}
+
+.subreddit-body {
+    margin : 0;
+    padding : 0;
+    padding-top: 10px; 
+    padding-left: 20px;
+    height: 100%;
+    
+    background-color: #64ac70;
+}
+
+.subreddit-empty-content {}
+
+.subreddit-load {
+    margin : 0;
+    padding : 0;
+    border : 0;
+    height : 60px;
+    width : 100%;
+    background-color : #92D19C;
+}
+
+.feed-grid {
     position : relative;
 }
 
-.stream-more {
-    margin : 0;
-    padding : 0;
-    border : 0;
-    height : 50px;
-    width : 100%;
-    background-color : grey;
-}
-
-.grid-item {
+.feed {
+    padding: 5px;
     width : 250px;
-    background-color : white;
-
-    border: solid 1px #D3D3D3;
-
-    moz-box-shadow: 1px 1px 1px 1px rgb(126, 126, 126);
-    webkit-shadow: 1px 1px 1px 1px rgb(126, 126, 126);
-    box-shadow: 1px 1px 1px 1px rgb(126, 126, 126);
-
+    background-color : #ffffff;
 }
 
 .type1 {height:250px;}
 .type2 {height:300px;}
 
-/*=======================================================================*/
+/*=======================================================================
+  Sidebar View
+=======================================================================*/
 
 .sidebar {
     width : 220px;
     margin : 100px;
     font-size : 0.8125em;
 
-    -webkit-box-shadow : 2px 0px 3px 0px rgba(0,0,0,.73);
-    -moz-box-shadow : 2px 0px 3px 0px rgba(0,0,0,.73);
-    box-shadow : 2px 0px 3px 0px rgba(0,0,0,.73);
-
     background-color : grey;
-
 }
 
 .sidebar ul {
-
     margin : 0;
     padding : 0;
     list-style : none;
-
 }
 
 .sidebar a {
@@ -97,14 +140,11 @@ body {
 }
 
 .sidebar .menu {
-
     width : auto;
     height : auto;
-
 }
 
 .sidebar .sidebar-tab {
-
     background-color : #6161975;
     background-image : -webkit-gradient(linear, left top, left bottom, from(rgb(114,112,134)), to(rgb(80, 88, 100))); 
     background-image : -webkit-linear-gradient(top, rgb(114,112,134), rgb(80, 88, 100)); 
@@ -121,7 +161,6 @@ body {
     font-weight : 600;
     color : #fff;
     text-shadow : 0px 1px 0px rgba(0,0,0,.5);
-
 }
 
 .sidebar .subitem a {

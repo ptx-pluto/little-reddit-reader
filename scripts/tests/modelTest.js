@@ -1,34 +1,21 @@
 define([
-    'models/Feed',
-    'models/Stream',
-    'models/Category',
-] ,function (Feed, Stream, Category) {
+    'models/Subreddit',
+] ,function (Subreddit) {
     
     'use strict';
 
     return function () {
 
-	var feed1 = new Feed({ message: 'something 1' });
-	var feed2 = new Feed({ message: 'something 2' });
-	var feed3 = new Feed({ message: 'something 3' });
+	var testReddit = new Subreddit({ name: 'beards' });
 
-	var myCategory = new Category({ name: 'my category'})
-
-	var firstStream = new Stream({ 
-	    name: 'first one', 
-	    feeds: [ feed1, feed3 ],
-	    category: myCategory,
+	testReddit.on('loaded', function(){
+	    testReddit.get('feeds').each(function(feed){
+	    	console.log(feed);
+	    });
+	    console.log(testReddit.get('feeds').pluck('id'));	    
 	});
 
-	var secondStream = new Stream({ 
-	    name: 'second one',
-	    feeds: [ feed2 ],
-	    category: myCategory,
-	});
-	
-	console.log(firstStream.get('feeds').pluck('message'));
-
-	console.log(myCategory.get('streams').pluck('name'));
+	testReddit.fetch();
 
     };
 

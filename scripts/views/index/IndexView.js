@@ -1,27 +1,38 @@
 define([
-
-], function () {
+    'underscore',
+    'marionette',
+    'views/index/content/SubredditView',
+    'text!templates/index.html',
+], function (_, Marionette, SubredditView, template) {
 
     'use strict';
 
     var IndexView = Marionette.Layout.extend({
 
+	id: 'content-page',
+
+	tagName: 'div',
+
+	className: 'content-page',
+
+	template: _.template(template),
+
 	regions: {
 	    sidebar: '#sidebar',
-	    content: '#content',
+	    content: '#main',
 	},
 
-	initialize: function(options){
-	    this.categories = this.collection;
-	},
+//	initialize: function(options){
+//	    this.categories = this.collection;
+//	},
 
-	onRender: function(){
-	    this.sidebar.show(new SidebarView({ collection: this.categories }));
-	    this.content.show(new EmptyContentView());
-	},
+//	onRender: function(){
+//	    this.sidebar.show(new SidebarView({ collection: this.categories }));
+//	    this.content.show(new EmptyContentView());
+//	},
 
-	onRenderStream: function(stream){
-	    this.content.show(new StreamView({ model: stream }));
+	onRenderSubreddit: function(subreddit){
+	    this.content.show(new SubredditView({ model: subreddit }));
 	},
 
     });

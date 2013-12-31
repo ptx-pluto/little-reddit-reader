@@ -18,12 +18,14 @@ define([
     // initialize ContentModule after account is ready
     //=======================================
 
-    app.module('Account', AccountModule);
-    app.module('Page', PageModule);
-    app.module('Index', IndexModule);
-    app.module('Content', ContentModule);
+//    app.module('Account', AccountModule);
+//    app.module('Page', PageModule);
+//    app.module('Index', IndexModule);
+//    app.module('Content', ContentModule);
 
     app.addInitializer(function(){
+	app.page.show(new IndexView());
+	app.page.currentView.triggerMethod('render:subreddit', new Subreddit({ name: 'beards' }));
     });
 
     return app;
