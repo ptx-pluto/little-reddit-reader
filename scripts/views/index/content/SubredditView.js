@@ -8,6 +8,10 @@ define([
 
     var SubredditView = Marionette.Layout.extend({
 
+	tagName: 'div',
+
+	className: 'subreddit',
+
 	template: _.template(template),
 
 	regions: {

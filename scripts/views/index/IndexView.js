@@ -9,21 +9,27 @@ define([
 
     var IndexView = Marionette.Layout.extend({
 
+	id: 'content-page',
+
+	tagName: 'div',
+
+	className: 'content-page',
+
 	template: _.template(template),
 
 	regions: {
 	    sidebar: '#sidebar',
-	    content: '#content',
+	    content: '#main',
 	},
 
-	initialize: function(options){
+//	initialize: function(options){
 //	    this.categories = this.collection;
-	},
+//	},
 
-	onRender: function(){
+//	onRender: function(){
 //	    this.sidebar.show(new SidebarView({ collection: this.categories }));
 //	    this.content.show(new EmptyContentView());
-	},
+//	},
 
 	onRenderSubreddit: function(subreddit){
 	    this.content.show(new SubredditView({ model: subreddit }));

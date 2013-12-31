@@ -7,6 +7,10 @@ define([
 
     var FeedView = Marionette.ItemView.extend({
 
+	tagName: 'li',
+
+	className: 'feed',
+
 	template: _.template(template),
 
     });

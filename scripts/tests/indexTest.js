@@ -11,7 +11,7 @@ define([
 	var testModel = new Subreddit({ name: 'beards' });
 	var testPage = new Marionette.Region({ el: 'body' });
 	testPage.show(new IndexView());
-	testPage.currentView.render();
+//	testPage.currentView.render();
 	testPage.currentView.triggerMethod('render:subreddit', testModel);
 	testModel.fetch();
     };
