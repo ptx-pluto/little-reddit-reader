@@ -87,11 +87,12 @@ require([
     'tests/modelTest',
     'tests/subredditTest',
     'tests/indexTest',
-], function (modelTest, subredditTest, indexTest) {
+    'tests/categoryTest',
+], function (modelTest, subredditTest, indexTest, categoryTest) {
 
 //    modelTest();
 //    subredditTest();
     indexTest();
-
+//    categoryTest();
 
 }); 

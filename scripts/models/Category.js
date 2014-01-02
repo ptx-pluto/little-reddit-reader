@@ -1,6 +1,8 @@
 define([
-    'relational'
-], function (Relational) {
+    'relational',
+    'models/Subreddit',
+    'models/Subreddits',
+], function (Relational, Subreddit, Subreddits) {
 
     'use strict';
 
@@ -15,11 +17,7 @@ define([
 		key: 'category',
 		type: 'HasOne',
 	    }
-	}]
-
-	initialize: function(){
-
-	}
+	}],
 
     });
 

@@ -1,20 +1,28 @@
 define([
     'underscore',
     'marionette',
-    'app',
-    'text!templates/sidebar.html'
-], function (_, Marionette, app, template) {
+    'views/index/sidebar/StatusBarView',
+    'views/index/sidebar/FooterBarView',
+    'views/index/sidebar/NavMenuView',
+    'text!templates/sidebar/sidebar.html'
+], function (_, Marionette, StatusBarView, FooterBarView, NavMenuView, template) {
 
     'use strict';
 
     var SidebarView = Marionette.Layout.extend({
 	
+	tagName: 'div',
+
+	className: 'sidebar',
+
+	id: 'sidebar',
+
 	template: _.template(template),
 
 	regions: {
-	    statusBar: '#status-bar',
-	    navMenu: '#nav-menu',
-	    footerBar: '#footer-bar',
+	    statusBar: '#sidebar-status-bar-container',
+	    navMenu:   '#sidebar-nav-menu-container',
+	    footerBar: '#sidebar-footer-bar-container',
 	},
 
 	initialize: function(){
