@@ -112,6 +112,8 @@ body {
     padding: 5px;
     width : 250px;
     background-color : #ffffff;
+
+    transition: top 1s;
 }
 
 .type1 { 

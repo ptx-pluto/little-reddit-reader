@@ -13,10 +13,14 @@ define([
 	className: 'menu-tab',
 	
 	template: _.template(template),
-	
+
 	ui: {
 	    title: '.tiitle',
 	    indicator: '.indicator',
+	},
+
+	triggers: {
+	    'click': 'toggle',
 	},
 
     });

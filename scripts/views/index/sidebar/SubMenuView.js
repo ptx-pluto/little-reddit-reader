@@ -29,6 +29,12 @@ define([
 	onRender: function(){
 	    this.tab.show(new SubMenuTabView({ model: this.category }));
 	    this.entries.show(new EntriesView({ collection: this.subreddits }));
+
+	    var self = this;
+	    this.listenTo(this.tab.currentView, 'toggle', function(){
+		self.entries.currentView.triggerMethod('toggle');
+	    });
+
 	},
 
     });
