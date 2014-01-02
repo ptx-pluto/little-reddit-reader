@@ -1,15 +1,22 @@
 define([
-
-], function () {
+    'marionette',
+    'views/index/sidebar/SubMenuView',
+], function (Marionette, SubMenuView) {
 
     'use strict';
 
-    var NavigationMenuView = Marionette.CollectionView.extend({
+    var NavMenuView = Marionette.CollectionView.extend({
+
+	id: 'sidebar-nav-menu',
+
+	tagName: 'ul',
+	
+	className: 'nav-menu',
 
 	itemView: SubMenuView,
 
     });
 
-    return NavigationMenuView;
+    return NavMenuView;
 
 });

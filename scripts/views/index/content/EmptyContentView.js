@@ -1,6 +1,7 @@
 define([
+    'underscore',
     'marionette',
-], function (Marionette) {
+], function (_, Marionette) {
 
     'use strict';
 

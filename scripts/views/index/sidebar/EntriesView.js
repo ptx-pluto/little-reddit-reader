@@ -1,15 +1,20 @@
 define([
-
-], function () {
+    'marionette',
+    'views/index/sidebar/EntryView',
+], function (Marionette, EntryView) {
 
     'use strict';
 
     var EntriesView = Marionette.CollectionView.extend({
 
-	className: 'sidebar-entries',
+	tagName: 'ul',
+
+	className: 'entries',
 	
 	itemView: EntryView,
 
     });
+
+    return EntriesView;
 
 });

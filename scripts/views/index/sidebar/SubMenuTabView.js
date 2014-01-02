@@ -1,19 +1,19 @@
 define([
     'underscore',
     'marionette',
-    'text!templates/sidebar/entry.html',
+    'text!templates/sidebar/submenu-tab.html',
 ], function (_, Marionette, template) {
 
     'use strict';
 
-    var EntryView = Marionette.ItemView.extend({
+    var SubMenuTabView = Marionette.ItemView.extend({
 
-	tagName: 'li',
+	tagName: 'a',
 	
-	className: 'entry',
-
+	className: 'menu-tab',
+	
 	template: _.template(template),
-
+	
 	ui: {
 	    title: '.tiitle',
 	    indicator: '.indicator',
@@ -21,6 +21,6 @@ define([
 
     });
 
-    return EntryView;
-
+    return SubMenuTabView;
+    
 });
