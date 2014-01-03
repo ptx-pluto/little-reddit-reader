@@ -26,6 +26,7 @@ define([
 
 	initialize: function(options){
 	    this.categories = this.collection;
+	    this.vent = options.vent;
 	},
 
 	onRender: function(){
@@ -33,8 +34,33 @@ define([
 //	    this.content.show(new EmptyContentView());
 	},
 
+	onSidebarToggle: function(){
+	    if (this.fullscreen === true) {
+		this.fullscreen = false;
+		this.content.$el.removeClass('fullscreen');
+	    }
+	    else if (this.fullscreen === false) {
+		this.fullscreen = true;
+		this.content.$el.addClass('fullscreen');
+	    }
+	    else {
+		if (this.content.$el.hasClass('fullscreen')) {
+		    this.content.$el.removeClass('fullscreen');
+		    this.fullscreen = false;
+		}
+		else {
+		    this.content.$el.addClass('fullscreen');
+		    this.fullscreen = false;
+		}
+	    }
+	},
+
 	onRenderSubreddit: function(subreddit){
-	    this.content.show(new SubredditView({ model: subreddit }));
+	    this.content.show(new SubredditView({ 
+		model: subreddit,
+		vent: this.vent 
+	    }));
+	    this.listenTo(this.content.currentView, 'sidebar:toggle', this.onSidebarToggle);
 	},
 
     });

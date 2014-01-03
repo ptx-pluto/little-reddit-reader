@@ -17,7 +17,7 @@ define([
 	template: _.template(template),
 
 	regions: {
-	    tab: '.menu-tab',
+	    tab: '.menu-tab-container',
 	    entries: '.entries-container',
 	},
 

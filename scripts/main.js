@@ -74,25 +74,24 @@ require.config({
 
 });
 
-// require([
-//     'app',
-//     'tests/modelTest'
-// ], function (app, test) {
-  
-//     app.start();
-
-// }); 
-
 require([
-    'tests/modelTest',
-    'tests/subredditTest',
-    'tests/indexTest',
-    'tests/categoryTest',
-], function (modelTest, subredditTest, indexTest, categoryTest) {
-
-//    modelTest();
-//    subredditTest();
-    indexTest();
-//    categoryTest();
+    'app',
+], function (app) {
+  
+    app.start();
 
 }); 
+
+// require([
+//     'tests/modelTest',
+//     'tests/subredditTest',
+//     'tests/indexTest',
+//     'tests/categoryTest',
+// ], function (modelTest, subredditTest, indexTest, categoryTest) {
+
+// //    modelTest();
+// //    subredditTest();
+//     indexTest();
+// //    categoryTest();
+
+// }); 

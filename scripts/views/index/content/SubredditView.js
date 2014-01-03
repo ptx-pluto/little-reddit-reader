@@ -1,8 +1,9 @@
 define([
+    'underscore',
     'marionette',
     'views/index/content/FeedGridView',
     'text!templates/subreddit.html',
-], function (Marionette, FeedGridView, template) {
+], function (_, Marionette, FeedGridView, template) {
 
     'use strict';
 
@@ -20,12 +21,24 @@ define([
 	    load: 'subreddit-load',
 	},
 
-	initialize: function(){
+	triggers: {
+	    'click .subreddit-header': 'sidebar:toggle',
+	},
+
+	initialize: function(options){
 	    this.subreddit = this.model;
+	    this.vent = options.vent;
 	},
 
 	onRender: function(){
-	    this.body.show(new FeedGridView({ collection: this.subreddit.get('feeds') }));
+	    this.body.show(new FeedGridView({ 
+		collection: this.subreddit.get('feeds'),
+		vent: this.vent 
+	    }));
+	},
+
+	onSidebarToggle: function(){
+	    this.vent.trigger('sidebar:toggle');
 	},
 
     });

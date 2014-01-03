@@ -18,24 +18,31 @@ define([
 	
 	emptyView: EmptyContentView,
 
-	events: {},
+	initialize: function(options) {
+	    this.vent = options.vent;
+	},
+
+	onRender: function(){
+	    this.organize();
+	    this.listenTo(this.vent, 'window:resize', this.organize);
+	    this.listenTo(this.vent, 'sidebar:toggle', this.delayOrganize);
+	},
 
 	onAfterItemAdded: function(){
 	    this.organize();
-	    console.log('one added');
 	},
 
 	organize: function(){
 	    $('.feed', this.$el).wookmark({
 		container: this.$el,
-		align: 'left',
+		align: 'center',
 		offset: 15,
 	    });
 	},
 
-	onRender: function(){
-	    this.organize();
-	    console.log('render');
+	delayOrganize: function(){
+	    var self = this;
+	    setTimeout(function(){ self.organize(); }, 1000);
 	},
 
     });
