@@ -6,7 +6,7 @@ define([
     
     var IndexController = Marionette.Controller.extend({
 
-	initialize: function(){
+	initialize: function(options){
 	    var self = this;
 	    $(window).resize(function(){
 		self.trigger('window:resize');
