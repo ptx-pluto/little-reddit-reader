@@ -35,7 +35,7 @@ define([
 	organize: function(){
 	    $('.feed', this.$el).wookmark({
 		container: this.$el,
-		align: 'center',
+		align: 'left',
 		offset: 15,
 	    });
 	},

@@ -23,6 +23,7 @@ body {
     margin : 0;
     padding : 0;
     border : 0;
+    height : 100%;
     min-height: 100%;
 }
 
@@ -49,8 +50,7 @@ body {
     left: 220px;
     right: 0;
     top : 0;
-
-    min-height: 100%;
+    bottom: 0;
 
     -webkit-box-shadow : -4px 0px 3px 0px rgba(68, 68, 68, 0.7);
     -moz-box-shadow : -4px 0px 3px 0px rgba(68, 68, 68, 0.7);
@@ -63,41 +63,59 @@ body {
     left: 0;
 }
 
+
+.main-container {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow-y: scroll;
+}
+
 /*=======================================================================
-  Subreddit View
+  Content Header
 =======================================================================*/
 
-.subreddit {
-    margin : 0;
-    padding : 0;
-    border : 0;
-    min-height : 100%;
-    width : 100%;
-}
-
-.subreddit ul {
-    list-style : none;
-}
-
-.subreddit-header {
-    padding: 20px;
+.main-header {
+    padding: 0;
     margin: 0;
     height: 60px;
     background-color: #4d8456;
 }
 
-.subreddit-body {
+.main-header h1 {
+    padding: 5px;
+    margin: 0;
+}
+
+.main-header img {
+    height: 100%;
+    margin-left: 10px;
+}
+
+/*=======================================================================
+  Subreddit View
+=======================================================================*/
+
+.subreddit ul {
+    list-style : none;
+}
+
+.subreddit {
+    position: relative;
     margin : 0;
     padding : 0;
-    padding-top: 20px; 
-    height: 100%;
-    min-height: 100%;
+    border : 0;
+    width : 100%;
+    min-height : 100%;
     background-color: #64ac70;
 }
 
-.subreddit-empty-content {}
-
 .subreddit-load {
+    position: absolute;
+    bottom: 0;
     margin : 0;
     padding : 0;
     border : 0;
@@ -106,10 +124,24 @@ body {
     background-color : #92D19C;
 }
 
+.subreddit-body {
+    margin : 0;
+    padding : 0;
+    padding-top: 20px; 
+    padding-bottom: 60px; 
+    padding-left: 15px; 
+    min-height: 100%;
+}
+
+.subreddit-empty-content {
+    min-height: 100%;
+}
+
 .feed-grid {
     position : relative;
     padding: 0;
     margin: 0;
+    min-height: 100%;
 }
 
 .feed {
@@ -118,6 +150,10 @@ body {
     background-color : #ffffff;
     overflow: hidden;
     transition: top 1s, left 0.5s;
+}
+
+.feed img {
+    width: 100%;
 }
 
 .type1 { 
@@ -263,7 +299,9 @@ body {
     text-shadow: 0px 0px 0px rgba(255,255,255,.01));
 }
 
-.sidebar .entry a:before {
+.sidebar .entry a:before,
+.sidebar .entry a:visited
+ {
     content: '▶';
     font-size: 8px;
     color: #bcbcbf;
@@ -274,6 +312,9 @@ body {
     left: -2.7em;
 }
 
+.sidebar .entry a:link {
+    color: #bcbcbf;    
+}
 
 .sidebar .entry:hover a, 
 .sidebar .entry:hover a span, 

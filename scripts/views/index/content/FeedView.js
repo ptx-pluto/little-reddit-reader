@@ -1,7 +1,8 @@
 define([
+    'underscore',
     'marionette',
     'text!templates/feed.html',
-], function (Marionette, template) {
+], function (_, Marionette, template) {
 
     'use strict';
 

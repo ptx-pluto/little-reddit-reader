@@ -1,29 +1,62 @@
 define([
     'jquery',
+    'backbone',
     'marionette',
     'models/Subreddit',
     'models/Categories',
     'views/index/IndexView',
-    'controllers/IndexController',
-], function ($, Marionette, Subreddit, Categories, IndexView, IndexController) {
+], function ($, Backbone, Marionette, Subreddit, Categories, IndexView) {
     
     'use strict';
 
+    var IndexController = Marionette.Controller.extend({
+	
+	initialize: function(options){
+	    this.module = options.module;
+	    var self = this;
+	    $(window).resize(function(){
+		self.trigger('window:resize');
+	    });
+	},
+	
+	routeSubreddit: function(name){
+	    this.module.currentSubreddit = new Subreddit({ name: name });
+	    this.module.region.currentView.triggerMethod(
+		'route:subreddit', 
+		this.module.currentSubreddit
+	    );
+	    this.module.currentSubreddit.fetch();
+	},
+	
+    });
+
     var IndexModule = function(self, app){
 
-	this.vent = new IndexController();
+	this.controller = new IndexController({ module: this });
+
+	this.router = new Marionette.AppRouter({
+	    controller: this.controller,
+	    appRoutes: {
+		'subreddit/:name': 'routeSubreddit'
+	    },
+	});
+
+	this.region = app.page;
 	this.subreddit = new Subreddit({ name: 'python' });
 	this.categories = new Categories();
 
 	this.on('start', function(){
-
 	    app.page.show(new IndexView({ 
 		collection: self.categories, 
-		vent: self.vent 
+		vent: self.controller 
 	    }));
-	    app.page.currentView.triggerMethod('render:subreddit', self.subreddit);
+	    self.region.currentView.triggerMethod(
+		'render:subreddit', 
+		self.subreddit
+	    );
 	    self.categories.fetch();
 	    self.subreddit.fetch();
+	    Backbone.history.start();
 	});
 
     };
