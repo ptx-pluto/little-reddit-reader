@@ -26,6 +26,10 @@ define([
 	    this.organize();
 	    this.listenTo(this.vent, 'window:resize', this.organize);
 	    this.listenTo(this.vent, 'sidebar:toggle', this.delayOrganize);
+	    var self = this;
+	    this.on('itemview:loaded', function(){
+		self.organize();
+	    });
 	},
 
 	onAfterItemAdded: function(){

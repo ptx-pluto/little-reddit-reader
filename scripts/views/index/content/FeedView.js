@@ -13,6 +13,19 @@ define([
 	className: 'feed',
 
 	template: _.template(template),
+	
+	ui: {
+	    image: 'img',
+	},
+
+	onRender: function(){
+	    var self = this;
+	    this.ui.image.hide();
+	    this.ui.image.load(function(){
+		self.ui.image.show();
+		self.trigger('loaded');
+	    });
+	},
 
     });
 
