@@ -3,11 +3,23 @@ define([
     'marionette',
     'views/index/sidebar/StatusBarView',
     'views/index/sidebar/FooterBarView',
-    'views/index/sidebar/NavMenuView',
+    'views/index/sidebar/SubMenuView',
     'text!templates/sidebar/sidebar.html'
-], function (_, Marionette, StatusBarView, FooterBarView, NavMenuView, template) {
+], function (_, Marionette, StatusBarView, FooterBarView, SubMenuView, template) {
 
     'use strict';
+
+    var NavMenuView = Marionette.CollectionView.extend({
+
+	id: 'sidebar-nav-menu',
+
+	tagName: 'ul',
+	
+	className: 'nav-menu',
+
+	itemView: SubMenuView,
+
+    });
 
     var SidebarView = Marionette.Layout.extend({
 	

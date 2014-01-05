@@ -15,27 +15,29 @@ define([], function(){
 		"subreddits": [
 		    "python",
 		    "javascript",
-		    "ruby"
+		    "ruby",
+		    "lisp"
 		]
 	    },
 	    {
-		"name": "Funny",
+		"name": "Pictures",
 		"subreddits": [
-		    "iphone",
-		    "android",
-		    "linux"
+		    "pics",
+		    "aww",
+		    "earthporn",
+		    "gifs"
 		]
 	    },
 	    {
 		"name": "Random",
 		"subreddits": [
-		    "iphone",
-		    "android",
-		    "linux"
+		    "funny",
+		    "historyporn",
+		    "ramdom"
 		]
 	    }
 	]
-    }
+    };
     
 });
 

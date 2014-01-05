@@ -2,5 +2,12 @@
   <%= author %>
 </div>
 <div>
+  <%= title %>
+</div>
+<div>
   <%= selftext %>
 </div>
+
+<% if ( url && url.match(/.(jpg)|(gif)|(png)$/) ) { %>
+<img src="<%= url %>">
+<% } %>

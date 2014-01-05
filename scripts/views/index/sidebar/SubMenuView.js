@@ -1,12 +1,73 @@
 define([
     'underscore',
     'marionette',
-    'views/index/sidebar/SubMenuTabView',
-    'views/index/sidebar/EntriesView',
     'text!templates/sidebar/submenu.html',
-], function (_, Marionette, SubMenuTabView, EntriesView, template) {
+    'text!templates/sidebar/submenu-tab.html',
+    'text!templates/sidebar/entry.html',
+], function (_, Marionette, tMenu, tTab, tEntry) {
 
     'use strict';
+
+    var SubMenuTabView = Marionette.ItemView.extend({
+
+	tagName: 'a',
+	
+	className: 'menu-tab',
+	
+	template: _.template(tTab),
+
+	ui: {
+	    title: '.tiitle',
+	    indicator: '.indicator',
+	},
+
+	triggers: {
+	    'click': 'toggle',
+	},
+
+    });
+
+    var EntryView = Marionette.ItemView.extend({
+
+	tagName: 'li',
+	
+	className: 'entry',
+
+	template: _.template(tEntry),
+
+	ui: {
+	    title: '.tiitle',
+	    indicator: '.indicator',
+	},
+
+    });
+
+    var EntriesView = Marionette.CollectionView.extend({
+
+	tagName: 'ul',
+
+	className: 'entries',
+	
+	itemView: EntryView,
+
+	onRender: function(){
+	    this.$el.hide();
+	    this.visibility = false;
+	},
+
+	onToggle: function(){
+	    if (this.visibility) {
+		this.visibility = false;
+                this.$el.stop(true, true).slideUp('normal');
+	    }
+	    else {
+		this.visibility = true;
+                this.$el.filter(':visible').slideUp('normal');
+                this.$el.stop(true, true).slideDown('normal');
+	    }
+	},
+
+    });
 
     var SubMenuView = Marionette.Layout.extend({
 
@@ -14,10 +75,10 @@ define([
 
 	className: 'submenu',
 
-	template: _.template(template),
+	template: _.template(tMenu),
 
 	regions: {
-	    tab: '.menu-tab',
+	    tab: '.menu-tab-container',
 	    entries: '.entries-container',
 	},
 

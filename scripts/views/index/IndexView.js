@@ -21,20 +21,53 @@ define([
 
 	regions: {
 	    sidebar: '#sidebar-container',
-	    content: '#main',
+	    content: '#main-container',
+	},
+
+	ui: {
+	    main: '#main',
+	    header: '#main-header',
+	},
+
+	triggers: {
+	    'click @ui.header': 'sidebar:toggle',
 	},
 
 	initialize: function(options){
 	    this.categories = this.collection;
+	    this.vent = options.vent;
+	    this.fullscreen = false;
 	},
 
 	onRender: function(){
 	    this.sidebar.show(new SidebarView({ collection: this.categories }));
-//	    this.content.show(new EmptyContentView());
+	    this.content.show(new EmptyContentView());
+	},
+
+	onSidebarToggle: function(){
+	    if (this.fullscreen === true) {
+		this.fullscreen = false;
+		this.ui.main.removeClass('fullscreen');
+	    }
+	    else if (this.fullscreen === false) {
+		this.fullscreen = true;
+		this.ui.main.addClass('fullscreen');
+	    }
+	    this.vent.trigger('sidebar:toggle');
 	},
 
 	onRenderSubreddit: function(subreddit){
-	    this.content.show(new SubredditView({ model: subreddit }));
+	    this.content.show(new SubredditView({ 
+		model: subreddit,
+		vent: this.vent 
+	    }));
+	},
+
+	onRouteSubreddit: function(subreddit){
+	    this.content.show(new SubredditView({ 
+		model: subreddit,
+		vent: this.vent 
+	    }));
 	},
 
     });
