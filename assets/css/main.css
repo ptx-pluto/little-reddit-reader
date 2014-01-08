@@ -1,56 +1,50 @@
 @charset "UTF-8";
-/*=======================================================================*/
-html {
+/* line 9, ../sass/main.scss */
+.inflate-y, html, body, #content-page, #sidebar-container, .sidebar .nav-menu-container {
   height: 100%;
-  min-height: 100%; }
+  min-height: 100%;
+}
 
+/* line 14, ../sass/main.scss */
+.frame, body, #content-page, #sidebar-container, #main, .subreddit .subreddit-load {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* line 26, ../sass/main.scss */
 body {
   font-size: 100%;
-  margin: 0;
-  padding: 0;
-  border: 0;
   background: #e4e4e4;
-  height: 100%;
-  min-height: 100%; }
+}
 
-/*=======================================================================
-  Content Page Layout
-=======================================================================*/
-#content-page {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  height: 100%;
-  min-height: 100%; }
-
+/* line 44, ../sass/main.scss */
 #sidebar-container {
-  margin: 0;
-  padding: 0;
-  border: 0;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
-  height: 100%;
-  min-height: 100%; }
+}
 
+/* line 53, ../sass/main.scss */
 #main {
+  -webkit-box-shadow: -4px 0px 3px 0px rgba(68, 68, 68, 0.7);
+  -moz-box-shadow: -4px 0px 3px 0px rgba(68, 68, 68, 0.7);
+  box-shadow: -4px 0px 3px 0px rgba(68, 68, 68, 0.7);
   position: absolute;
-  margin: 0;
-  padding: 0;
-  border: 0;
   left: 220px;
   right: 0;
   top: 0;
   bottom: 0;
-  -webkit-box-shadow: -4px 0px 3px 0px rgba(68, 68, 68, 0.7);
-  -moz-box-shadow: -4px 0px 3px 0px rgba(68, 68, 68, 0.7);
-  box-shadow: -4px 0px 3px 0px rgba(68, 68, 68, 0.7);
-  transition: left 1s; }
+  transition: left 1s;
+}
 
+/* line 66, ../sass/main.scss */
 #main.fullscreen {
-  left: 0; }
+  left: 0;
+}
 
+/* line 70, ../sass/main.scss */
 .main-container {
   position: absolute;
   top: 60px;
@@ -58,31 +52,28 @@ body {
   left: 0;
   right: 0;
   width: 100%;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+}
 
-/*=======================================================================
-  Content Header
-=======================================================================*/
+/* line 85, ../sass/main.scss */
 .main-header {
   padding: 0;
   margin: 0;
   height: 60px;
-  background-color: #4d8456; }
-
+  background-color: #4d8456;
+}
+/* line 91, ../sass/main.scss */
 .main-header h1 {
   padding: 5px;
-  margin: 0; }
-
+  margin: 0;
+}
+/* line 96, ../sass/main.scss */
 .main-header img {
   height: 100%;
-  margin-left: 10px; }
+  margin-left: 10px;
+}
 
-/*=======================================================================
-  Subreddit View
-=======================================================================*/
-.subreddit ul {
-  list-style: none; }
-
+/* line 109, ../sass/main.scss */
 .subreddit {
   position: relative;
   margin: 0;
@@ -90,103 +81,108 @@ body {
   border: 0;
   width: 100%;
   min-height: 100%;
-  background-color: #64ac70; }
-
-.subreddit-load {
+  background-color: #64ac70;
+}
+/* line 118, ../sass/main.scss */
+.subreddit ul {
+  list-style: none;
+}
+/* line 122, ../sass/main.scss */
+.subreddit .subreddit-load {
   position: absolute;
   bottom: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
   height: 60px;
   width: 100%;
-  background-color: #92D19C; }
-
-.subreddit-body {
+  background-color: #92D19C;
+}
+/* line 131, ../sass/main.scss */
+.subreddit .subreddit-body {
   margin: 0;
   padding: 0;
   padding-top: 20px;
   padding-bottom: 60px;
   padding-left: 15px;
-  min-height: 100%; }
+  min-height: 100%;
+}
 
+/* line 142, ../sass/main.scss */
 .subreddit-empty-content {
-  min-height: 100%; }
+  min-height: 100%;
+}
 
+/* line 146, ../sass/main.scss */
 .feed-grid {
   position: relative;
   padding: 0;
   margin: 0;
-  min-height: 100%; }
+  min-height: 100%;
+}
 
+/* line 153, ../sass/main.scss */
 .feed {
   padding: 5px;
   width: 250px;
   background-color: #ffffff;
   overflow: hidden;
-  transition: top 2s, left 0.5s; }
-
+  transition: top 2s, left 0.5s;
+}
+/* line 161, ../sass/main.scss */
 .feed img {
-  width: 100%; }
+  width: 100%;
+}
 
-.type1 {
-  height: 250px; }
-
-.type2 {
-  height: 300px; }
-
-/*=======================================================================
-  Sidebar Layout
-=======================================================================*/
+/* line 176, ../sass/main.scss */
 .sidebar-container {
   width: 220px;
-  margin: 100px;
   font-size: 0.8125em;
-  background-color: #65727E; }
+  background-color: #65727e;
+}
 
+/* line 182, ../sass/main.scss */
 .sidebar {
   height: 100%;
-  width: 100%; }
-
+  width: 100%;
+}
+/* line 186, ../sass/main.scss */
 .sidebar .nav-menu-container {
-  height: 100%;
-  min-height: 100%;
   margin-top: 60px;
-  background-color: #65727E; }
-
+  background-color: #65727e;
+}
+/* line 192, ../sass/main.scss */
 .sidebar .footer-bar-container {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 50px;
-  background-color: #21333D; }
-
+  background-color: #21333d;
+}
+/* line 200, ../sass/main.scss */
 .sidebar .status-bar-container {
   position: absolute;
   top: 0;
   width: 100%;
   height: 60px;
-  background-color: #21333D; }
+  background-color: #21333d;
+}
 
-/*=======================================================================
-  Sidebar Nav Menu
-=======================================================================*/
+/* line 219, ../sass/main.scss */
 .sidebar ul {
   margin: 0;
   padding: 0;
-  list-style: none; }
-
+  list-style: none;
+}
+/* line 225, ../sass/main.scss */
 .sidebar a {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
-.sidebar .menu {
-  width: auto;
-  height: auto; }
-
+/* line 236, ../sass/main.scss */
 .sidebar .menu-tab {
-  background-color: #21333D;
+  -webkit-box-shadow: 0 1px 1px 1px #58697a;
+  -moz-box-shadow: 0 1px 1px 1px #58697a;
+  box-shadow: 0 1px 1px 1px #58697a;
+  background-color: #21333d;
   border-bottom: 1px solid #33373d;
-  -webkit-box-shadow: 0 1px 1px 1px #58697A;
   width: 100%;
   height: 2.75em;
   line-height: 2.75em;
@@ -196,44 +192,10 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   color: #fff;
-  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5); }
-
-.sidebar .entry a {
-  background-color: #405365;
-  border-bottom: 1px solid #323C46;
-  width: 100%;
-  height: 2.75em;
-  line-height: 2.75em;
-  text-indent: 2.75em;
-  display: block;
-  position: relative;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.923em;
-  font-weight: 400;
-  color: #878d95; }
-
-.sidebar .entry:last-child a {
-  border-bottom: 1px solid #33373d; }
-
-.sidebar .menu-tab:hover,
-.sidebar .menu-tab .active {
-  background-color: #35afe3;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#45c7eb), to(#2698db));
-  background-image: -webkit-linear-gradient(top, #45c7eb, #2698db);
-  background-image: -moz-linear-gradient(top, #45c7eb, #2698db);
-  background-image: -o-linear-gradient(top, #45c7eb, #2698db);
-  background-image: -ms-linear-gradient(top, #45c7eb, #2698db);
-  background-image: linear-gradient(top, #45c7eb, #2698db);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#45c7eb', EndColorStr='#2698db');
-  border-bottom: 1px solid #103c56;
-  -webkit-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
-  -moz-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
-  box-shadow: inset 0px 1px 0px 0px #6ad2ef; }
-
-.sidebar .menu-tab .active {
-  border-bottom: #21333D; }
-
-.sidebar .menu-tab span {
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+}
+/* line 254, ../sass/main.scss */
+.sidebar .menu-tab .indicator {
   font-size: 0.857em;
   display: inline-block;
   position: relative;
@@ -255,13 +217,60 @@ body {
   -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.26), 0px 1px 0px 0px rgba(255, 255, 255, 0.15);
   box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.26), 0px 1px 0px 0px rgba(255, 255, 255, 0.15);
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
-  font-weight: 500; }
+  font-weight: 500;
+}
 
-.sidebar .menu-tab:hover span,
-.sidebar .menu-tab .active span {
-  background: #2173a1; }
+/* line 281, ../sass/main.scss */
+.sidebar .menu-tab:hover {
+  background-color: #35afe3;
+  /* background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(69, 199, 235)),to(rgb(38, 152, 219))); */
+  /* background-image: -webkit-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219)); */
+  /* background-image: -moz-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219)); */
+  /* background-image: -o-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219)); */
+  /* background-image: -ms-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219)); */
+  /* background-image: linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219)); */
+  border-bottom: 1px solid #103c56;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+  -moz-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+  box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+}
+/* line 297, ../sass/main.scss */
+.sidebar .menu-tab:hover span {
+  background: #2173a1;
+}
 
-.sidebar .emtry a span {
+/* line 309, ../sass/main.scss */
+.sidebar .entry a {
+  background-color: #405365;
+  border-bottom: 1px solid #323C46;
+  width: 100%;
+  height: 2.75em;
+  line-height: 2.75em;
+  text-indent: 2.75em;
+  display: block;
+  position: relative;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.923em;
+  font-weight: 400;
+  color: #878d95;
+}
+/* line 325, ../sass/main.scss */
+.sidebar .entry a:before, .sidebar .entry a:visited {
+  content: '▶';
+  font-size: 8px;
+  color: #bcbcbf;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  top: 0;
+  left: -2.7em;
+}
+/* line 336, ../sass/main.scss */
+.sidebar .entry a:link {
+  color: #bcbcbf;
+}
+/* line 340, ../sass/main.scss */
+.sidebar .entry .indicator {
   font-size: 0.857em;
   display: inline-block;
   position: absolute;
@@ -279,23 +288,10 @@ body {
   -webkit-border-radius: .769em;
   -moz-border-radius: 769em;
   border-radius: 769em;
-  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.01); }
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.01);
+}
 
-.sidebar .entry a:before,
-.sidebar .entry a:visited {
-  content: '▶';
-  font-size: 8px;
-  color: #bcbcbf;
-  position: absolute;
-  width: 1em;
-  height: 1em;
-  top: 0;
-  left: -2.7em; }
-
-.sidebar .entry a:link {
-  color: #bcbcbf; }
-
-.sidebar .entry:hover a,
-.sidebar .entry:hover a span,
-.sidebar .entry:hover a:before {
-  color: #32373D; }
+/* line 365, ../sass/main.scss */
+.sidebar .entry:hover a, .sidebar .entry:hover a span, .sidebar .entry:hover a:before {
+  color: #32373D;
+}
