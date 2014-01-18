@@ -1,0 +1,53 @@
+.subreddit {
+    @extend .frame;
+    position: relative;
+    width : 100%;
+    min-height : 100%;
+    background-color: #64ac70;
+
+    ul {
+	list-style : none;
+    };    
+    
+}
+
+.subreddit-load {
+    @extend .frame;
+    position: absolute;
+    bottom: 0;
+    height : 60px;
+    width : 100%;
+    background-color : #92D19C;
+};
+
+.subreddit-body {
+    margin : 0;
+    padding : 0;
+    padding-top: 20px; 
+    padding-bottom: 60px; 
+    padding-left: 15px; 
+    min-height: 100%;
+};
+
+.subreddit-empty-content {
+    min-height: 100%;
+}
+
+.feed-grid {
+    position : relative;
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+}
+
+.feed {
+    padding: 5px;
+    width : 250px;
+    background-color : #ffffff;
+    overflow: hidden;
+    transition: top 2s, left 0.5s;
+
+    img {
+	width: 100%;
+    };
+}
