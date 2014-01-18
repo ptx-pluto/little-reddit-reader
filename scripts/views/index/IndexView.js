@@ -21,11 +21,11 @@ define([
 
 	regions: {
 	    sidebar: '#sidebar-container',
-	    content: '#main-container',
+	    content: '#main-body',
 	},
 
 	ui: {
-	    main: '#main',
+	    main: '#main-container',
 	    header: '#main-header',
 	},
 

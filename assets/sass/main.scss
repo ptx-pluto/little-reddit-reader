@@ -18,56 +18,59 @@
 }
 
 //============================
+//  Content Page Layout
+//============================
 
 html {
-    @extend .inflate-y;
+    @extend .frame;
+    height: 100%;
 }
 
 body {
-
     @extend .frame;
-    @extend .inflate-y;
+    height: 100%;
 
     font-size : 100%;
     background : rgb(228, 228, 228);
 }
 
-//============================
-//  Content Page Layout
-//============================
-
 #content-page {
     @extend .frame;
-    @extend .inflate-y;
+    height: 100%;
 }
+
+$sidebar-width: 220px;
 
 #sidebar-container {
     @extend .frame;
-    @extend .inflate-y;
+    height: 100%;
+    width : $sidebar-width;
+    font-size : 0.8125em;
+    background-color: $pale-blue;
     position : fixed;
-    top : 0;
-    bottom : 0;
     left : 0;
 }
 
-#main {
-
+#main-container {
     @extend .frame;
     @include box-shadow(-4px 0px 3px 0px rgba(68, 68, 68, 0.7));
-
-    position: absolute;
-    left: 220px;
+    position: fixed;
+    height: 100%;
+    left: $sidebar-width;
     right: 0;
-    top : 0;
-    bottom: 0;
     transition: left 1s;
+
+    &.fullscreen {
+	left: 0;
+    }
+
 }
 
-#main.fullscreen {
-    left: 0;
-}
+//================================
+//  Main Area
+//================================
 
-.main-container {
+.main-body {
     position: absolute;
     top: 60px;
     bottom: 0;
@@ -76,11 +79,6 @@ body {
     width: 100%;
     overflow-y: scroll;
 }
-
-//================================
-//  Content Header
-//================================
-
 
 .main-header {
     padding: 0;
@@ -100,44 +98,40 @@ body {
 
 }
 
-
 //===============================
 //  Subreddit View
 //===============================
 
-
 .subreddit {
+    @extend .frame;
     position: relative;
-    margin : 0;
-    padding : 0;
-    border : 0;
     width : 100%;
     min-height : 100%;
     background-color: #64ac70;
 
     ul {
 	list-style : none;
-    };
-    
-    .subreddit-load {
-	@extend .frame;
-	position: absolute;
-	bottom: 0;
-	height : 60px;
-	width : 100%;
-	background-color : #92D19C;
-    };
-    
-    .subreddit-body {
-	margin : 0;
-	padding : 0;
-	padding-top: 20px; 
-	padding-bottom: 60px; 
-	padding-left: 15px; 
-	min-height: 100%;
-    };
+    };    
     
 }
+
+.subreddit-load {
+    @extend .frame;
+    position: absolute;
+    bottom: 0;
+    height : 60px;
+    width : 100%;
+    background-color : #92D19C;
+};
+
+.subreddit-body {
+    margin : 0;
+    padding : 0;
+    padding-top: 20px; 
+    padding-bottom: 60px; 
+    padding-left: 15px; 
+    min-height: 100%;
+};
 
 .subreddit-empty-content {
     min-height: 100%;
@@ -151,7 +145,6 @@ body {
 }
 
 .feed {
-
     padding: 5px;
     width : 250px;
     background-color : #ffffff;
@@ -161,60 +154,18 @@ body {
     img {
 	width: 100%;
     };
-
 }
 
-
-//===============================
+//=================================
 //  Sidebar Layout
 //=================================
 
-$sidebar-width: 220px;
 $status-bar-height: 60px;
 $footer-bar-height: 50px;
-
-.sidebar-container {
-    width : $sidebar-width;
-    font-size : 0.8125em;
-    background-color: $pale-blue;
-}
 
 .sidebar {
     height: 100%;
     width: 100%;
-
-    .nav-menu-container {
-	@extend .inflate-y;
-	margin-top: $status-bar-height;
-	background-color: $pale-blue;
-    };
-    
-    .footer-bar-container {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: $footer-bar-height;
-	background-color: $dark-blue;
-    };
-
-    .status-bar-container {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: $status-bar-height;
-	background-color: $dark-blue;
-    };
-    
-}
-
-
-
-//==================================
-//  Sidebar Nav Menu
-//==================================
-
-
-.sidebar {
 
     ul {
 	margin : 0;
@@ -228,10 +179,31 @@ $footer-bar-height: 50px;
     
 }
 
-//=====================================
-// Sidebar Menu Tab
-//=====================================
+.sidebar .footer-bar-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $footer-bar-height;
+    background-color: $dark-blue;
+};
 
+.sidebar .status-bar-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: $status-bar-height;
+    background-color: $dark-blue;
+};
+
+//==================================
+//  Sidebar Nav Menu
+//==================================
+
+.sidebar .nav-menu-container {
+    @extend .inflate-y;
+    margin-top: $status-bar-height;
+    background-color: $pale-blue;
+};
 
 .sidebar .menu-tab {
 
