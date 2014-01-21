@@ -1,29 +1,36 @@
 @charset "UTF-8";
 /* line 26, ../sass/_components.scss */
-.frame, html, body, #content-page, #sidebar-container, #main-container, .subreddit, .subreddit-load {
+.frame, html, body, #content-page, #sidebar-container, #main-container, .main-header, .subreddit, .subreddit-load {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-/* line 4, ../sass/_layout.scss */
+/* line 26, ../sass/_components.scss */
+.frame, html, body, #content-page, #sidebar-container, #main-container, .main-header, .subreddit, .subreddit-load {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* line 5, ../sass/_layout.scss */
 html {
   height: 100%;
 }
 
-/* line 9, ../sass/_layout.scss */
+/* line 10, ../sass/_layout.scss */
 body {
   height: 100%;
   font-size: 100%;
   background: #e4e4e4;
 }
 
-/* line 17, ../sass/_layout.scss */
+/* line 18, ../sass/_layout.scss */
 #content-page {
   height: 100%;
 }
 
-/* line 23, ../sass/_layout.scss */
+/* line 24, ../sass/_layout.scss */
 #sidebar-container {
   height: 100%;
   width: 220px;
@@ -33,7 +40,7 @@ body {
   left: 0;
 }
 
-/* line 33, ../sass/_layout.scss */
+/* line 34, ../sass/_layout.scss */
 #main-container {
   -webkit-box-shadow: -4px 0px 3px 0px rgba(68, 68, 68, 0.7);
   -moz-box-shadow: -4px 0px 3px 0px rgba(68, 68, 68, 0.7);
@@ -44,12 +51,28 @@ body {
   right: 0;
   transition: left 1s;
 }
-/* line 42, ../sass/_layout.scss */
+/* line 43, ../sass/_layout.scss */
 #main-container.fullscreen {
   left: 0;
 }
 
 /* line 49, ../sass/_layout.scss */
+.main-header {
+  height: 60px;
+  line-height: 60px;
+  background-color: #4d8456;
+}
+/* line 55, ../sass/_layout.scss */
+.main-header .content-header {
+  height: 100%;
+}
+/* line 62, ../sass/_layout.scss */
+.main-header img {
+  height: 100%;
+  padding-left: 10px;
+}
+
+/* line 70, ../sass/_layout.scss */
 .main-body {
   position: absolute;
   top: 60px;
@@ -60,57 +83,30 @@ body {
   overflow-y: scroll;
 }
 
-/* line 59, ../sass/_layout.scss */
-.main-header {
-  padding: 0;
-  margin: 0;
-  height: 60px;
-  background-color: #4d8456;
-}
-/* line 65, ../sass/_layout.scss */
-.main-header h1 {
-  padding: 5px;
-  margin: 0;
-}
-/* line 70, ../sass/_layout.scss */
-.main-header img {
-  height: 100%;
-  margin-left: 10px;
-}
-
 /* line 26, ../sass/_components.scss */
-.frame, html, body, #content-page, #sidebar-container, #main-container, .subreddit, .subreddit-load {
+.frame, html, body, #content-page, #sidebar-container, #main-container, .main-header, .subreddit, .subreddit-load {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-/* line 4, ../sass/_sidebar.scss */
+/* line 5, ../sass/_sidebar.scss */
 .sidebar {
   height: 100%;
   width: 100%;
 }
-/* line 8, ../sass/_sidebar.scss */
+/* line 9, ../sass/_sidebar.scss */
 .sidebar ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 14, ../sass/_sidebar.scss */
+/* line 15, ../sass/_sidebar.scss */
 .sidebar a {
   text-decoration: none;
 }
 
-/* line 20, ../sass/_sidebar.scss */
-.sidebar .footer-bar-container {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background-color: #21333d;
-}
-
-/* line 28, ../sass/_sidebar.scss */
+/* line 21, ../sass/_sidebar.scss */
 .sidebar .status-bar-container {
   position: absolute;
   top: 0;
@@ -119,14 +115,46 @@ body {
   background-color: #21333d;
 }
 
-/* line 40, ../sass/_sidebar.scss */
+/* line 29, ../sass/_sidebar.scss */
+.sidebar .footer-bar-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #21333d;
+}
+
+/* line 37, ../sass/_sidebar.scss */
+.sidebar .footer-bar {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 42, ../sass/_sidebar.scss */
+.subreddit-input {
+  height: 60%;
+  width: 90%;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  -o-border-radius: 2em;
+  border-radius: 2em;
+}
+/* line 48, ../sass/_sidebar.scss */
+.subreddit-input:focus {
+  -webkit-box-shadow: inset 0px 0px 10px 1px #21333d;
+  -moz-box-shadow: inset 0px 0px 10px 1px #21333d;
+  box-shadow: inset 0px 0px 10px 1px #21333d;
+}
+
+/* line 58, ../sass/_sidebar.scss */
 .sidebar .nav-menu-container {
   height: 100%;
   margin-top: 60px;
   background-color: #65727e;
 }
 
-/* line 46, ../sass/_sidebar.scss */
+/* line 64, ../sass/_sidebar.scss */
 .sidebar .menu-tab {
   -webkit-box-shadow: 0 1px 1px 1px #58697a;
   -moz-box-shadow: 0 1px 1px 1px #58697a;
@@ -144,7 +172,7 @@ body {
   color: #fff;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
 }
-/* line 64, ../sass/_sidebar.scss */
+/* line 82, ../sass/_sidebar.scss */
 .sidebar .menu-tab:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #45c7eb), color-stop(100%, #2698db));
   background-image: -webkit-linear-gradient(top, #45c7eb, #2698db);
@@ -156,12 +184,12 @@ body {
   box-shadow: inset 0px 1px 0px 0px #6ad2ef;
   border-bottom: 1px solid #103c56;
 }
-/* line 69, ../sass/_sidebar.scss */
+/* line 87, ../sass/_sidebar.scss */
 .sidebar .menu-tab:hover span a {
   background: #2173a1;
 }
 
-/* line 75, ../sass/_sidebar.scss */
+/* line 93, ../sass/_sidebar.scss */
 .sidebar .menu-tab .indicator {
   font-size: 0.857em;
   display: inline-block;
@@ -189,7 +217,7 @@ body {
   box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.26), 0px 1px 0px 0px rgba(255, 255, 255, 0.15);
 }
 
-/* line 85, ../sass/_sidebar.scss */
+/* line 103, ../sass/_sidebar.scss */
 .sidebar .entry a {
   background-color: #405365;
   border-bottom: 1px solid #323C46;
@@ -204,7 +232,7 @@ body {
   font-weight: 400;
   color: #878d95;
 }
-/* line 100, ../sass/_sidebar.scss */
+/* line 118, ../sass/_sidebar.scss */
 .sidebar .entry a:before, .sidebar .entry a:visited {
   content: '▶';
   font-size: 8px;
@@ -215,16 +243,16 @@ body {
   top: 0;
   left: -2.7em;
 }
-/* line 111, ../sass/_sidebar.scss */
+/* line 129, ../sass/_sidebar.scss */
 .sidebar .entry a:link {
   color: #bcbcbf;
 }
-/* line 118, ../sass/_sidebar.scss */
+/* line 136, ../sass/_sidebar.scss */
 .sidebar .entry:hover a, .sidebar .entry:hover a span, .sidebar .entry:hover a:before {
   color: #32373D;
 }
 
-/* line 126, ../sass/_sidebar.scss */
+/* line 144, ../sass/_sidebar.scss */
 .sidebar .entry .indicator {
   font-size: 0.857em;
   display: inline-block;
