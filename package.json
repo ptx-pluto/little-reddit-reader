@@ -1,0 +1,20 @@
+{
+    "name": "myproject",
+    "version": "0.0.1",
+    "description": "An example Node.js project",
+    "dependencies": {},
+    "jam": {
+	"packageDir": "scripts/vender",
+	"baseUrl": "scripts",
+	"dependencies": {
+	    "jquery": null,
+	    "underscore": null,
+	    "jquery-ui-core": null,
+	    "wookmark2": null,
+	    "backbone": null,
+	    "backbone.marionette": null,
+	    "backbone-relational": null,
+	    "text": null
+	}
+    }
+}
