@@ -1,5 +1,6 @@
 @import "settings";
 @import "components";
+@import "compass";
 
 .sidebar {
     height: 100%;
@@ -17,6 +18,14 @@
     
 }
 
+.sidebar .status-bar-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: $status-bar-height;
+    background-color: $dark-blue;
+};
+
 .sidebar .footer-bar-container {
     position: absolute;
     bottom: 0;
@@ -25,13 +34,22 @@
     background-color: $dark-blue;
 };
 
-.sidebar .status-bar-container {
-    position: absolute;
-    top: 0;
+.sidebar .footer-bar {
+    height: 100%;
     width: 100%;
-    height: $status-bar-height;
-    background-color: $dark-blue;
 };
+
+.subreddit-input {
+    height: 60%;
+    width: 90%;
+
+    @include border-radius(2em);
+
+    &:focus {
+	@include box-shadow(inset 0px 0px 10px 1px $dark-blue);
+    }
+
+}
 
 //==================================
 //  Sidebar Nav Menu

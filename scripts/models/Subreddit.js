@@ -4,7 +4,8 @@ define([
     'relational',
     'models/Feed',
     'models/Feeds',
-], function ($, _, Relational, Feed, Feeds) {
+    'utils/Reddit',
+], function ($, _, Relational, Feed, Feeds, fetcher) {
 
     'use strict';
     
@@ -27,21 +28,16 @@ define([
 	    return '/r/' + this.get('name') + '/new.json';
 	},
 
-	initialize: function(){},
-
 	fetch: function(){
-	    var self = this;
-	    $.ajax({ 
-		url: 'http://reddit.com' + _.result(this, 'url') ,
-		dataType: 'jsonp',
-		jsonp: 'jsonp', 
-	    }).done(function(data){
-		_.each(data.data.children, function(feed){
-		    self.get('feeds').add(feed.data);
-		});		
-		self.trigger('loaded');
-	    });
-
+	    (function(self) {
+		fetcher(self.get('name'))
+		    .done(function(data){
+			_.each(data.data.children, function(feed){
+			    self.get('feeds').add(feed.data);
+			});		
+			self.trigger('loaded');
+		    });
+	    }(this));
 	},
 	
     });
