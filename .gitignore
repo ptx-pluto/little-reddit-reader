@@ -2,3 +2,4 @@
 *.rbc
 *.scssc
 scripts/vender
+node_modules
