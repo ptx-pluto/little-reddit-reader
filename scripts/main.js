@@ -1,23 +1,21 @@
-var cdn = {
-    jquery:     'http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min',
-    underscore: 'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min',
-    backbone:   'http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min',
-    bootstrap:  'http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min',
-    jqueryui:   'http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min',
-    wookmark:   'http://cdnjs.cloudflare.com/ajax/libs/jquery.wookmark/1.3.1/jquery.wookmark.min',
-    text:       'http://cdnjs.cloudflare.com/ajax/libs/require-text/2.0.10/text'
-};
-
 var local = {
     jquery:     'libs/jquery-2.0.2.min',
     underscore: 'libs/underscore-min',
     backbone:   'libs/backbone-min',
     relational: 'libs/backbone-relational',
     marionette: 'libs/backbone.marionette.min',
-    bootstrap:  '',
-    jqueryui:   'libs/jquery-ui',
     wookmark:   'libs/jquery.wookmark.min',
     text:       'libs/text'
+};
+
+var vender = {
+    jquery:     'vender/jquery/jquery',
+    underscore: 'vender/underscore/underscore',
+    backbone:   'vender/backbone/backbone',
+    relational: 'vender/backbone-relational/backbone-relational',
+    marionette: 'vender/marionette/lib/backbone.marionette',
+    wookmark:   'vender/wookmark-jquery/jquery.wookmark',
+    text:       'vender/requirejs-text/text'
 };
 
 require.config({
@@ -54,44 +52,24 @@ require.config({
 	    exports: 'jQuery'
 	},
 
-	'jqueryui': {
-	    deps: [
-		'jquery'
-	    ],
-	    exports: '$'
-	},
-
 	'wookmark': {
 	    deps: [
-		'jquery',
-		'jqueryui'
+		'jquery'
 	    ],
 	    exports: '$'
 	}
     },
 
-    paths: local
+    paths: vender
 
 });
 
 require([
-    'app',
+    'app'
 ], function (app) {
   
+    'use strict';
+
     app.start();
 
 }); 
-
-// require([
-//     'tests/modelTest',
-//     'tests/subredditTest',
-//     'tests/indexTest',
-//     'tests/categoryTest',
-// ], function (modelTest, subredditTest, indexTest, categoryTest) {
-
-// //    modelTest();
-// //    subredditTest();
-//     indexTest();
-// //    categoryTest();
-
-// }); 

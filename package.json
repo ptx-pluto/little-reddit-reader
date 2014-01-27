@@ -1,8 +1,11 @@
 {
-    "name": "myproject",
+    "name": "little-reddit-reader",
     "version": "0.0.1",
     "description": "An example Node.js project",
-    "dependencies": {},
+    "devDependencies": {
+	"grunt": "",
+	"grunt-contrib-requirejs": ""
+    },
     "jam": {
 	"packageDir": "scripts/vender",
 	"baseUrl": "scripts",
