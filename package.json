@@ -1,0 +1,10 @@
+{
+    "name": "little-reddit-reader",
+    "version": "0.0.1",
+    "description": "my little reddit reader project",
+    "devDependencies": {
+	"grunt": "latest",
+	"grunt-contrib-requirejs": "latest",
+	"grunt-bower-task": "latest"
+    }
+}
