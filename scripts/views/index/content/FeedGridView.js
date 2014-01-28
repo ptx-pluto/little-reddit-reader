@@ -3,7 +3,7 @@ define([
     'marionette',
     'views/index/content/FeedView',
     'views/index/content/EmptyContentView',
-    'wookmark',
+    'wookmark'
 ], function ($, Marionette, FeedView, EmptyContentView) {
 
     'use strict';
@@ -40,14 +40,14 @@ define([
 	    $('.feed', this.$el).wookmark({
 		container: this.$el,
 		align: 'left',
-		offset: 15,
+		offset: 15
 	    });
 	},
 
 	delayOrganize: function(){
 	    var self = this;
 	    setTimeout(function(){ self.organize(); }, 1000);
-	},
+	}
 
     });
 
