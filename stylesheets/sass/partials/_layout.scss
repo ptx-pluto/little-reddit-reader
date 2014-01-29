@@ -45,7 +45,7 @@ body {
     @extend .frame;
     height: $status-bar-height;
     line-height: $status-bar-height;
-    background-color: #4d8456;
+    background-color: $dark-green;
 
     .content-header {
 	height: 100%;

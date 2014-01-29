@@ -18,15 +18,7 @@ define([
 
 	regions: {
 	    body: '.subreddit-body',
-	    load: '.subreddit-load'
-	},
-
-	ui: {
-	    load: '.subreddit-load'
-	},
-
-	triggers: {
-	    'click @ui.load': 'load:more'
+	    load: '.subreddit-load-container'
 	},
 
 	initialize: function(options){

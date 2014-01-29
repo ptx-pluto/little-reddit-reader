@@ -23,9 +23,9 @@ define([
 
 	defaults: {
 	    order: 'new',
-	    isEnded: false,
 	    before: null,
-	    after: null
+	    after: null,
+	    loading: false
 	},
 
 //	initialize: function() {},
@@ -61,8 +61,8 @@ define([
 		if (this.get('after') === null) { return; }
 		params.data = { after: this.get('after') };
 		params.success = function(data) {
-		    console.log(data);
 		    this.set('after', data.data.after);
+		    this.set('loading', false);
 		    _.each(data.data.children, function(feed){
 			this.get('feeds').add(feed.data);
 		    }, this);		
@@ -88,6 +88,8 @@ define([
 	},
 
 	loadMore: function() {
+	    if (this.get('loading')) { return; }
+	    this.set('loading', true);
 	    this.sync('more');
 	},
 
