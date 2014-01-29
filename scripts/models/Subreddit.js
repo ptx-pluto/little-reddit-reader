@@ -49,7 +49,7 @@ define([
 
 	    case 'fetch':
 		params.success = function(data){
-		    this.set('after', data.after);
+		    this.set('after', data.data.after);
 		    _.each(data.data.children, function(feed){
 			this.get('feeds').add(feed.data);
 		    }, this);
@@ -61,7 +61,8 @@ define([
 		if (this.get('after') === null) { return; }
 		params.data = { after: this.get('after') };
 		params.success = function(data) {
-		    this.set('after', data.after);
+		    console.log(data);
+		    this.set('after', data.data.after);
 		    _.each(data.data.children, function(feed){
 			this.get('feeds').add(feed.data);
 		    }, this);		
@@ -86,7 +87,7 @@ define([
 	    this.sync('fetch');
 	},
 
-	more: function() {
+	loadMore: function() {
 	    this.sync('more');
 	},
 

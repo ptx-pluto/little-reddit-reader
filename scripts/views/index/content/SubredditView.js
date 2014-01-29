@@ -2,8 +2,9 @@ define([
     'underscore',
     'marionette',
     'views/index/content/FeedGridView',
-    'text!templates/subreddit.html',
-], function (_, Marionette, FeedGridView, template) {
+    'views/index/content/LoadView',
+    'text!templates/subreddit.html'
+], function (_, Marionette, FeedGridView, LoadView, template) {
 
     'use strict';
 
@@ -16,13 +17,16 @@ define([
 	template: _.template(template),
 
 	regions: {
-	    header: '.subreddit-header',
 	    body: '.subreddit-body',
-	    load: 'subreddit-load',
+	    load: '.subreddit-load'
+	},
+
+	ui: {
+	    load: '.subreddit-load'
 	},
 
 	triggers: {
-	    'click .subreddit-header': 'sidebar:toggle',
+	    'click @ui.load': 'load:more'
 	},
 
 	initialize: function(options){
@@ -35,11 +39,11 @@ define([
 		collection: this.subreddit.get('feeds'),
 		vent: this.vent 
 	    }));
-	},
-
-	onSidebarToggle: function(){
-	    this.vent.trigger('sidebar:toggle');
-	},
+	    this.load.show(new LoadView({
+		model: this.subreddit,
+		vent: this.vent 
+	    }));
+	}
 
     });
     
