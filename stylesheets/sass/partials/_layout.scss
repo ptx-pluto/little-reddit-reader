@@ -19,7 +19,7 @@ body {
 #sidebar-container {
     @extend .frame;
     height: 100%;
-    width : $sidebar-width;
+    width: $sidebar-width;
     font-size : 0.8125em;
     background-color: $pale-blue;
     position : fixed;
@@ -41,23 +41,6 @@ body {
 
 }
 
-.main-header {
-    @extend .frame;
-    height: $status-bar-height;
-    line-height: $status-bar-height;
-    background-color: $dark-green;
-
-    .content-header {
-	height: 100%;
-    };
-    
-    img {
-	height: 100%;
-	padding-left: 10px;
-    };
-
-}
-
 .main-body {
     position: absolute;
     top: $status-bar-height;
@@ -66,5 +49,47 @@ body {
     right: 0;
     width: 100%;
     overflow-y: scroll;
+    background-color: $deep-green;
 }
 
+
+.main-header {
+    @extend .frame;
+    height: $status-bar-height;
+    line-height: $status-bar-height;
+    background-color: $dark-green;
+    position: relative;
+
+    img {
+	height: 100%;
+	padding-left: 10px;
+    };
+
+}
+
+.main-header .subreddit-title {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    background-color: purple;
+    height: 100%;
+    min-width: 100px;
+};
+    
+.subreddit-nav {    
+    @extend .frame;
+    height: 100%;
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    background-color: red;
+    
+    li {
+	@extend .frame;
+	display: inline-block;
+	height: 100%;
+	min-width: 100px;
+	background-color: blue;
+    };
+
+}

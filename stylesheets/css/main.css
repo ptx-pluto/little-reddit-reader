@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* line 23, ../sass/modules/_utility.scss */
-.frame, html, body, #content-page, #sidebar-container, #main-container, .main-header, .subreddit, .subreddit-load-container, .subreddit-load {
+.frame, html, body, #content-page, #sidebar-container, #main-container, .main-header, .subreddit-nav, .subreddit-nav li, .subreddit, .subreddit-load-container, .subreddit-load {
   margin: 0;
   padding: 0;
   border: 0;
@@ -50,22 +50,6 @@ body {
 }
 
 /* line 44, ../sass/partials/_layout.scss */
-.main-header {
-  height: 60px;
-  line-height: 60px;
-  background-color: #4d8456;
-}
-/* line 50, ../sass/partials/_layout.scss */
-.main-header .content-header {
-  height: 100%;
-}
-/* line 54, ../sass/partials/_layout.scss */
-.main-header img {
-  height: 100%;
-  padding-left: 10px;
-}
-
-/* line 61, ../sass/partials/_layout.scss */
 .main-body {
   position: absolute;
   top: 60px;
@@ -74,6 +58,46 @@ body {
   right: 0;
   width: 100%;
   overflow-y: scroll;
+  background-color: #64ac70;
+}
+
+/* line 56, ../sass/partials/_layout.scss */
+.main-header {
+  height: 60px;
+  line-height: 60px;
+  background-color: #4d8456;
+  position: relative;
+}
+/* line 63, ../sass/partials/_layout.scss */
+.main-header img {
+  height: 100%;
+  padding-left: 10px;
+}
+
+/* line 70, ../sass/partials/_layout.scss */
+.main-header .subreddit-title {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  background-color: purple;
+  height: 100%;
+  min-width: 100px;
+}
+
+/* line 79, ../sass/partials/_layout.scss */
+.subreddit-nav {
+  height: 100%;
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+  background-color: red;
+}
+/* line 87, ../sass/partials/_layout.scss */
+.subreddit-nav li {
+  display: inline-block;
+  height: 100%;
+  min-width: 100px;
+  background-color: blue;
 }
 
 /* line 1, ../sass/partials/_sidebar.scss */
@@ -267,7 +291,7 @@ body {
 }
 
 /* line 23, ../sass/modules/_utility.scss */
-.frame, html, body, #content-page, #sidebar-container, #main-container, .main-header, .subreddit, .subreddit-load-container, .subreddit-load {
+.frame, html, body, #content-page, #sidebar-container, #main-container, .main-header, .subreddit-nav, .subreddit-nav li, .subreddit, .subreddit-load-container, .subreddit-load {
   margin: 0;
   padding: 0;
   border: 0;
@@ -313,6 +337,7 @@ body {
 
 /* line 41, ../sass/partials/_subreddit.scss */
 .subreddit-body {
+  position: relative;
   margin: 0;
   padding: 0;
   padding-top: 20px;
@@ -321,12 +346,12 @@ body {
   min-height: 100%;
 }
 
-/* line 50, ../sass/partials/_subreddit.scss */
+/* line 51, ../sass/partials/_subreddit.scss */
 .subreddit-empty-content {
   min-height: 100%;
 }
 
-/* line 54, ../sass/partials/_subreddit.scss */
+/* line 55, ../sass/partials/_subreddit.scss */
 .feed-grid {
   position: relative;
   padding: 0;
@@ -334,7 +359,7 @@ body {
   min-height: 100%;
 }
 
-/* line 61, ../sass/partials/_subreddit.scss */
+/* line 62, ../sass/partials/_subreddit.scss */
 .feed {
   padding: 5px;
   width: 250px;
@@ -342,7 +367,7 @@ body {
   overflow: hidden;
   transition: top 2s, left 0.5s;
 }
-/* line 68, ../sass/partials/_subreddit.scss */
+/* line 69, ../sass/partials/_subreddit.scss */
 .feed img {
   width: 100%;
 }
