@@ -76,14 +76,21 @@ body {
     min-width: 100px;
 };
     
-.subreddit-nav {    
+.subreddit-navbar-container {
     @extend .frame;
     height: 100%;
     position: absolute;
     right: 50px;
     bottom: 0;
     background-color: red;
+}
+
+.subreddit-navbar {    
     
+    @extend .frame;
+    height: 100%;
+    background-color: yellow;
+
     li {
 	@extend .frame;
 	display: inline-block;

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* line 23, ../sass/modules/_utility.scss */
-.frame, html, body, #content-page, #sidebar-container, #main-container, .main-header, .subreddit-nav, .subreddit-nav li, .subreddit, .subreddit-load-container, .subreddit-load {
+.frame, html, body, #content-page, #sidebar-container, #main-container, .main-header, .subreddit-navbar-container, .subreddit-navbar, .subreddit-navbar li, .subreddit, .subreddit-load-container, .subreddit-load {
   margin: 0;
   padding: 0;
   border: 0;
@@ -85,15 +85,21 @@ body {
 }
 
 /* line 79, ../sass/partials/_layout.scss */
-.subreddit-nav {
+.subreddit-navbar-container {
   height: 100%;
   position: absolute;
   right: 50px;
   bottom: 0;
   background-color: red;
 }
-/* line 87, ../sass/partials/_layout.scss */
-.subreddit-nav li {
+
+/* line 88, ../sass/partials/_layout.scss */
+.subreddit-navbar {
+  height: 100%;
+  background-color: yellow;
+}
+/* line 94, ../sass/partials/_layout.scss */
+.subreddit-navbar li {
   display: inline-block;
   height: 100%;
   min-width: 100px;
@@ -291,7 +297,7 @@ body {
 }
 
 /* line 23, ../sass/modules/_utility.scss */
-.frame, html, body, #content-page, #sidebar-container, #main-container, .main-header, .subreddit-nav, .subreddit-nav li, .subreddit, .subreddit-load-container, .subreddit-load {
+.frame, html, body, #content-page, #sidebar-container, #main-container, .main-header, .subreddit-navbar-container, .subreddit-navbar, .subreddit-navbar li, .subreddit, .subreddit-load-container, .subreddit-load {
   margin: 0;
   padding: 0;
   border: 0;

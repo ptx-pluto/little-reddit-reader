@@ -4,8 +4,9 @@ define([
     'views/index/content/SubredditView',
     'views/index/sidebar/SidebarView',
     'views/index/content/EmptyContentView',
-    'text!templates/index.html',
-], function (_, Marionette, SubredditView, SidebarView, EmptyContentView, template) {
+    'views/index/content/NavBarView',
+    'text!templates/index.html'
+], function (_, Marionette, SubredditView, SidebarView, EmptyContentView, NavBarView, template) {
 
     'use strict';
 
@@ -22,15 +23,17 @@ define([
 	regions: {
 	    sidebar: '#sidebar-container',
 	    content: '#main-body',
+	    navbar: '.subreddit-navbar-container'
 	},
 
 	ui: {
-	    main: '#main-container',
-	    header: '#main-header',
+	    main: '.main-container',
+	    header: '.main-header',
+	    toggle: '.sidebar-toggle'
 	},
 
 	triggers: {
-	    'click @ui.header': 'sidebar:toggle',
+	    'click @ui.toggle': 'sidebar:toggle'
 	},
 
 	initialize: function(options){
@@ -56,19 +59,16 @@ define([
 	    this.vent.trigger('sidebar:toggle');
 	},
 
-	onRenderSubreddit: function(subreddit){
-	    this.content.show(new SubredditView({ 
-		model: subreddit,
-		vent: this.vent 
-	    }));
-	},
-
 	onRouteSubreddit: function(subreddit){
 	    this.content.show(new SubredditView({ 
 		model: subreddit,
 		vent: this.vent 
 	    }));
-	},
+	    this.navbar.show(new NavBarView({ 
+		model: subreddit,
+		vent: this.vent 
+	    }));
+	}
 
     });
 
