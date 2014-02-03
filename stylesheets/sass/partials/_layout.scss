@@ -61,6 +61,7 @@ body {
     position: relative;
 
     img {
+	cursor: pointer;
 	height: 100%;
 	padding-left: 10px;
     };
@@ -70,33 +71,70 @@ body {
 .main-header .subreddit-title {
     position: absolute;
     top: 0;
-    left: 100px;
-    background-color: purple;
+    left: 80px;
     height: 100%;
     min-width: 100px;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+
 };
     
 .subreddit-navbar-container {
     @extend .frame;
     height: 100%;
     position: absolute;
-    right: 50px;
+    right: 20px;
     bottom: 0;
-    background-color: red;
 }
 
-.subreddit-navbar {    
-    
+$navbar-tab__highlight-height : 10px;
+
+.subreddit-navbar {
     @extend .frame;
     height: 100%;
-    background-color: yellow;
+}
 
-    li {
-	@extend .frame;
-	display: inline-block;
-	height: 100%;
-	min-width: 100px;
-	background-color: blue;
+.subreddit__navbar-tab {
+    @extend .frame;
+    margin: -4px !important;
+    display: inline-block;
+    position: relative;
+    top: 0;
+    height: calc(100% - #{$navbar-tab__highlight-height});
+    min-width: 50px;
+
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+
+    &:first-child:before {
+	content: '|';
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: $pale-green;
     };
 
+    &:after {
+	content: '|';
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: $pale-green;
+    };
+
+    &:hover, &.is_active {
+	border-bottom: solid $pale-green $navbar-tab__highlight-height !important;
+    };
+    
+    a, a:link, a:visited {
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+	height: 100%;
+	width: 100%;
+	color: white;
+    }
+    
 }
