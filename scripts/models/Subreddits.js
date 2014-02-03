@@ -1,14 +1,14 @@
 define([
     'backbone',
-    'models/Stream',
-], function (Backbone, Stream) {
+    'models/Subreddit'
+], function (Backbone, Subreddit) {
 
     'use strict';
 
-    var Streams = Backbone.Collection.extend({
-	model: Stream
+    var Subreddits = Backbone.Collection.extend({
+	model: Subreddit
     });
 
-    return Stream;
+    return Subreddits;
 
 });

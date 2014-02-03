@@ -1,18 +1,13 @@
 define([
-    'jquery',
     'underscore',
     'backbone',
     'models/Category',
-    'tests/samples/categories',
-], function ($, _, Backbone, Category, sample) {
+    'tests/samples/categories'
+], function (_, Backbone, Category, sample) {
 
     'use strict';
 
     var Categories = Backbone.Collection.extend({
-
-	initialize: function(){
-//	    this.localStorage = new Backbone.LocalStorage('categories');
-	},
 
 	fetch: function(){
 	    var self = this;
@@ -23,7 +18,7 @@ define([
 		    newCate.get('subreddits').add({ name: sub });
 		});
 	    });
-	},
+	}
 
     });
 

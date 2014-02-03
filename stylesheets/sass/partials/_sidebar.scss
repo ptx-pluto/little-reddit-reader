@@ -1,7 +1,3 @@
-@import "settings";
-@import "components";
-@import "compass";
-
 .sidebar {
     height: 100%;
     width: 100%;
@@ -78,6 +74,8 @@
     font-weight : 600;
     color : #fff;
     text-shadow : 0px 1px 0px rgba(0,0,0,.5);
+
+    cursor: pointer;
 
     &:hover {
 	@include background-image(linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219)));	

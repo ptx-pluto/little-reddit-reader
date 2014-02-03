@@ -4,7 +4,7 @@ define([
     'marionette',
     'models/Subreddit',
     'models/Categories',
-    'views/index/IndexView',
+    'views/index/IndexView'
 ], function ($, Backbone, Marionette, Subreddit, Categories, IndexView) {
     
     'use strict';
@@ -21,10 +21,9 @@ define([
 	    }(this));
 	},
 	
-	routeSubreddit: function(name){
-	    this.module.currentSubreddit 
-		= this.module.subreddits[name] 
-		= this.module.subreddits[name] || new Subreddit({ name: name });
+	routeSubreddit: function(name, order){
+	    order = order || 'new';
+	    this.module.currentSubreddit = new Subreddit({ name: name, order: order });
 	    this.region.currentView.triggerMethod(
 		'route:subreddit', 
 		this.module.currentSubreddit
@@ -35,7 +34,7 @@ define([
 	show: function() {
 	    this.region.show(new IndexView({ 
 		collection: this.module.categories, 
-		vent: this, 
+		vent: this
 	    }));
 	    this.module.categories.fetch();
 	    Backbone.history.start();
@@ -49,14 +48,15 @@ define([
 
 	this.controller = new IndexController({ 
 	    module: this,
-	    region: app.page,
+	    region: app.page
 	});
 
 	this.router = new Marionette.AppRouter({
 	    controller: this.controller,
 	    appRoutes: {
+		'subreddit/:name/:order': 'routeSubreddit',
 		'subreddit/:name': 'routeSubreddit'
-	    },
+	    }
 	});
 
 	this.on('start', function(){
