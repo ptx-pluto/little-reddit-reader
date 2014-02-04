@@ -30,5 +30,61 @@
 .feed__title {}
 
 .feed__status {
-    height: 1.5em;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: 2em;
+
+    span {
+	vertical-align: middle;
+	margin-right: 5px;
+	margin-left: 5px;
+    }
+
+}
+
+.feed__save {
+    display: inline-block;
+    width: 24px;
+    height: 22px;
+    @extend .glyphicons-heart-empty;
+
+    &:hover {
+	@extend .glyphicons-heart;
+    }
+}
+
+.feed__detail {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    @extend .glyphicons-resize-full;
+
+    &:hover {
+	@extend .glyphicons-resize-small;
+    }
+}
+
+.feed__up {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    @extend .glyphicons-circle-arrow-top;
+
+    &:hover {
+	@extend .glyphicons-circle-plus;
+    }
+
+}
+
+.feed__down {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    @extend .glyphicons-circle-arrow-down;
+
+    &:hover {
+	@extend .glyphicons-circle-minus;
+    }
+
 }
