@@ -3,7 +3,7 @@ define([
     'marionette',
     'text!templates/sidebar/submenu.html',
     'text!templates/sidebar/submenu-tab.html',
-    'text!templates/sidebar/entry.html',
+    'text!templates/sidebar/entry.html'
 ], function (_, Marionette, tMenu, tTab, tEntry) {
 
     'use strict';
@@ -18,12 +18,12 @@ define([
 
 	ui: {
 	    title: '.tiitle',
-	    indicator: '.indicator',
+	    indicator: '.indicator'
 	},
 
 	triggers: {
-	    'click': 'toggle',
-	},
+	    'click': 'toggle'
+	}
 
     });
 
@@ -37,7 +37,7 @@ define([
 
 	ui: {
 	    title: '.tiitle',
-	    indicator: '.indicator',
+	    indicator: '.indicator'
 	},
 
     });
@@ -58,14 +58,13 @@ define([
 	onToggle: function(){
 	    if (this.visibility) {
 		this.visibility = false;
-                this.$el.stop(true, true).slideUp('normal');
+                this.$el.stop(true, false).slideUp('normal');
 	    }
 	    else {
 		this.visibility = true;
-                this.$el.filter(':visible').slideUp('normal');
-                this.$el.stop(true, true).slideDown('normal');
+                this.$el.stop(true, false).slideDown('normal');
 	    }
-	},
+	}
 
     });
 
@@ -79,7 +78,7 @@ define([
 
 	regions: {
 	    tab: '.menu-tab-container',
-	    entries: '.entries-container',
+	    entries: '.entries-container'
 	},
 
 	initialize: function(){
@@ -96,7 +95,7 @@ define([
 		self.entries.currentView.triggerMethod('toggle');
 	    });
 
-	},
+	}
 
     });
 
