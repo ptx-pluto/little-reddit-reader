@@ -27,7 +27,7 @@ define([
 	    this.listenTo(this.vent, 'window:resize', this.organize);
 	    this.listenTo(this.vent, 'sidebar:toggle', this.delayOrganize);
 	    var self = this;
-	    this.on('itemview:loaded', function(){
+	    this.on('itemview:size:change', function(){
 		self.organize();
 	    });
 	},

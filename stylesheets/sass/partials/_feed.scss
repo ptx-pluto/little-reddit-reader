@@ -17,10 +17,6 @@
     };
 }
 
-.feed__details {
-    display: none;
-}
-
 .feed__title-bar {
     margin: 0;
     border: 0;
@@ -54,7 +50,7 @@
     }
 }
 
-.feed__detail {
+.feed__details-toggle {
     display: inline-block;
     width: 24px;
     height: 24px;
