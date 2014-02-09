@@ -2,7 +2,7 @@ define([
     'underscore',
     'backbone',
     'marionette',
-    'text!templates/sidebar/footer-bar.html',
+    'text!templates/sidebar/footer-bar.html'
 ], function (_, Backbone, Marionette, template) {
 
     'use strict';
@@ -20,23 +20,20 @@ define([
 	template: _.template(template),
 
 	ui: {
-	    input: '#subreddit-input',
+	    input: '.sidebar__input',
+	    submit: '.sidebar__input-submit'
 	},
 
 	events: {
-	    'keypress @ui.input': 'onInput',
+	    'keypress @ui.input': 'onInput'
 	},
-
-	// triggers: {
-	//     'input @ui.input': 'input',
-	// },
 
 	onInput: function(event) {
 	    console.log(event);
 	    if (event.which === ENTER_KEY ){
 		Backbone.history.navigate('#/subreddit/' + this.ui.input.val());
 	    }
-	},
+	}
 
     });
 

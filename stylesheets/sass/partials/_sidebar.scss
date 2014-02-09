@@ -27,25 +27,64 @@
     bottom: 0;
     width: 100%;
     height: $footer-bar-height;
-    background-color: $dark-blue;
 };
 
 .sidebar .footer-bar {
     height: 100%;
-    width: 100%;
+    margin-right: 5px;
+    margin-left: 5px;
 };
 
-.subreddit-input {
+//==================================
+//  Sidebar Footer Bar
+//==================================
+
+.sidebar__input-box {
+    position: relative;
     height: 60%;
     width: 90%;
-
+    padding: 0.5em;
+    background-color: white;
     @include border-radius(2em);
 
     &:focus {
-	@include box-shadow(inset 0px 0px 10px 1px $dark-blue);
+	outline: none;
+	@include box-shadow(0 0 10px 1px rgb(39,39,39));
     }
-
 }
+
+.sidebar__input {
+    display: inline-block;
+    position: absolute;
+    background: transparent;
+    margin: 0;
+    border: 0;
+    height: 90%;
+    width: 60%;
+    left: 20px;
+    top: 5%;
+    outline: none;
+    color: black;
+    font-size: 1.5em;
+}
+
+.sidebar__input-submit {
+    position: absolute;
+    top: 12%;
+    right: 6px;
+    display: inline-block;
+    margin: 0;
+    border: 0;
+    height: 76%;
+    width: 30%;
+    background-color: $pale-blue;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    @include border-radius(2em);
+}
+
 
 //==================================
 //  Sidebar Nav Menu
