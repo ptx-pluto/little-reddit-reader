@@ -2530,18 +2530,12 @@ body {
   height: 50px;
 }
 
-/* line 32, ../sass/partials/_sidebar.scss */
-.sidebar .footer-bar {
-  height: 100%;
-  margin-right: 5px;
-  margin-left: 5px;
-}
-
-/* line 42, ../sass/partials/_sidebar.scss */
+/* line 36, ../sass/partials/_sidebar.scss */
 .sidebar__input-box {
   position: relative;
+  margin-right: 10px;
+  margin-left: 7px;
   height: 60%;
-  width: 90%;
   padding: 0.5em;
   background-color: white;
   -webkit-border-radius: 2em;
@@ -2550,15 +2544,15 @@ body {
   -o-border-radius: 2em;
   border-radius: 2em;
 }
-/* line 50, ../sass/partials/_sidebar.scss */
-.sidebar__input-box:focus {
+/* line 45, ../sass/partials/_sidebar.scss */
+.sidebar__input-box:hover {
   outline: none;
   -webkit-box-shadow: 0 0 10px 1px #272727;
   -moz-box-shadow: 0 0 10px 1px #272727;
   box-shadow: 0 0 10px 1px #272727;
 }
 
-/* line 56, ../sass/partials/_sidebar.scss */
+/* line 51, ../sass/partials/_sidebar.scss */
 .sidebar__input {
   display: inline-block;
   position: absolute;
@@ -2574,7 +2568,7 @@ body {
   font-size: 1.5em;
 }
 
-/* line 71, ../sass/partials/_sidebar.scss */
+/* line 66, ../sass/partials/_sidebar.scss */
 .sidebar__input-submit {
   position: absolute;
   top: 12%;
@@ -2596,14 +2590,14 @@ body {
   border-radius: 2em;
 }
 
-/* line 93, ../sass/partials/_sidebar.scss */
+/* line 88, ../sass/partials/_sidebar.scss */
 .sidebar .nav-menu-container {
   height: 100%;
   margin-top: 60px;
   background-color: #65727e;
 }
 
-/* line 99, ../sass/partials/_sidebar.scss */
+/* line 94, ../sass/partials/_sidebar.scss */
 .sidebar .menu-tab {
   -webkit-box-shadow: 0 1px 1px 1px #58697a;
   -moz-box-shadow: 0 1px 1px 1px #58697a;
@@ -2622,7 +2616,7 @@ body {
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-/* line 119, ../sass/partials/_sidebar.scss */
+/* line 114, ../sass/partials/_sidebar.scss */
 .sidebar .menu-tab:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #45c7eb), color-stop(100%, #2698db));
   background-image: -webkit-linear-gradient(top, #45c7eb, #2698db);
@@ -2634,12 +2628,12 @@ body {
   box-shadow: inset 0px 1px 0px 0px #6ad2ef;
   border-bottom: 1px solid #103c56;
 }
-/* line 124, ../sass/partials/_sidebar.scss */
+/* line 119, ../sass/partials/_sidebar.scss */
 .sidebar .menu-tab:hover span a {
   background: #2173a1;
 }
 
-/* line 130, ../sass/partials/_sidebar.scss */
+/* line 125, ../sass/partials/_sidebar.scss */
 .sidebar .menu-tab .indicator {
   font-size: 0.857em;
   display: inline-block;
@@ -2667,7 +2661,7 @@ body {
   box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.26), 0px 1px 0px 0px rgba(255, 255, 255, 0.15);
 }
 
-/* line 140, ../sass/partials/_sidebar.scss */
+/* line 135, ../sass/partials/_sidebar.scss */
 .sidebar .entry a {
   background-color: #405365;
   border-bottom: 1px solid #323C46;
@@ -2682,7 +2676,7 @@ body {
   font-weight: 400;
   color: #878d95;
 }
-/* line 155, ../sass/partials/_sidebar.scss */
+/* line 150, ../sass/partials/_sidebar.scss */
 .sidebar .entry a:before, .sidebar .entry a:visited {
   content: '▶';
   font-size: 8px;
@@ -2693,16 +2687,16 @@ body {
   top: 0;
   left: -2.7em;
 }
-/* line 166, ../sass/partials/_sidebar.scss */
+/* line 161, ../sass/partials/_sidebar.scss */
 .sidebar .entry a:link {
   color: #bcbcbf;
 }
-/* line 173, ../sass/partials/_sidebar.scss */
+/* line 168, ../sass/partials/_sidebar.scss */
 .sidebar .entry:hover a, .sidebar .entry:hover a span, .sidebar .entry:hover a:before {
   color: #32373D;
 }
 
-/* line 181, ../sass/partials/_sidebar.scss */
+/* line 176, ../sass/partials/_sidebar.scss */
 .sidebar .entry .indicator {
   font-size: 0.857em;
   display: inline-block;

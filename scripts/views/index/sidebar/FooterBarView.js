@@ -11,11 +11,11 @@ define([
 
     var FooterBarView = Marionette.ItemView.extend({
 
-	id: 'sidebar-footer-bar',
+	id: 'sidebar__input-box',
 
 	tagName: 'div',
 
-	className: 'footer-bar',
+	className: 'sidebar__input-box',
 
 	template: _.template(template),
 
