@@ -25,14 +25,19 @@ define([
 	},
 
 	events: {
-	    'keypress @ui.input': 'onInput'
+	    'keypress @ui.input': 'onInput',
+	    'click @ui.submit': 'onRoute'
 	},
 
 	onInput: function(event) {
-	    console.log(event);
 	    if (event.which === ENTER_KEY ){
-		Backbone.history.navigate('#/subreddit/' + this.ui.input.val());
+		this.onRoute();
 	    }
+	},
+
+	onRoute: function() {
+	    Backbone.history.navigate('#/subreddit/' + this.ui.input.val());	    
+	    this.ui.input.val('');
 	}
 
     });
