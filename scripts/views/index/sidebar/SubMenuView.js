@@ -17,8 +17,7 @@ define([
 	template: _.template(tTab),
 
 	ui: {
-	    title: '.tiitle',
-	    indicator: '.indicator'
+	    title: '.tiitle'
 	},
 
 	triggers: {
@@ -36,9 +35,8 @@ define([
 	template: _.template(tEntry),
 
 	ui: {
-	    title: '.tiitle',
-	    indicator: '.indicator'
-	},
+	    title: '.tiitle'
+	}
 
     });
 
