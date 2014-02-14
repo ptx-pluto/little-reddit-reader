@@ -2,7 +2,7 @@ define([
     'underscore',
     'backbone',
     'marionette',
-    'text!templates/sidebar/footer-bar.html',
+    'text!templates/sidebar/footer-bar.html'
 ], function (_, Backbone, Marionette, template) {
 
     'use strict';
@@ -11,32 +11,34 @@ define([
 
     var FooterBarView = Marionette.ItemView.extend({
 
-	id: 'sidebar-footer-bar',
+	id: 'sidebar__input-box',
 
 	tagName: 'div',
 
-	className: 'footer-bar',
+	className: 'sidebar__input-box',
 
 	template: _.template(template),
 
 	ui: {
-	    input: '#subreddit-input',
+	    input: '.sidebar__input',
+	    submit: '.sidebar__input-submit'
 	},
 
 	events: {
 	    'keypress @ui.input': 'onInput',
+	    'click @ui.submit': 'onRoute'
 	},
-
-	// triggers: {
-	//     'input @ui.input': 'input',
-	// },
 
 	onInput: function(event) {
-	    console.log(event);
 	    if (event.which === ENTER_KEY ){
-		Backbone.history.navigate('#/subreddit/' + this.ui.input.val());
+		this.onRoute();
 	    }
 	},
+
+	onRoute: function() {
+	    Backbone.history.navigate('#/subreddit/' + this.ui.input.val());	    
+	    this.ui.input.val('');
+	}
 
     });
 
