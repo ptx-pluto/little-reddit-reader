@@ -60,7 +60,7 @@ require.config({
 	}
     },
 
-    paths: vender
+    paths: local
 
 });
 
