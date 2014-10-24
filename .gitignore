@@ -1,7 +1,6 @@
 *.gem
 *.rbc
 *.scssc
-scripts/vender
 node_modules
 .sass-cache/*
 stylesheets/.sass-cache/*
